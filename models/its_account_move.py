@@ -71,7 +71,7 @@ class AccountMove(models.Model):
     def _onchange_custom_total(self):
         for move in self:
             tax_rate = 0.15
-
+            subtotal = 0
             # If custom_total is provided and > 0, use subtotal from amount_untaxed_signed
             if move.custom_total and move.custom_total > 0:
                 subtotal = move.amount_untaxed_signed or 0.0
