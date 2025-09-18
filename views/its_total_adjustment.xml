@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="account_move_form_custom_total" model="ir.ui.view">
+            <field name="name">account.move.form.custom.total</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='narration']" position="before">
+                    <div class="o_field_wrapper" style="margin-top:10px;">
+                        <label for="custom_total" string="Custom Total"/>
+                        <field name="custom_total"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
